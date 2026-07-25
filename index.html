@@ -16,16 +16,23 @@
 <style>
 .hearts {
   font-size: 35px;
-  animation: move 3s infinite;
+  position: fixed;
+  bottom: 0;
+  animation: move 4s infinite;
 }
 
 @keyframes move {
   from {
-    transform: translateY(50px);
+    transform: translateY(0);
+    opacity: 1;
   }
   to {
-    transform: translateY(-50px);
+    transform: translateY(-500px);
+    opacity: 0;
   }
 }
 </style>
+
+</body>
 </html>
+
