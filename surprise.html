@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Surprise ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Birthday Surprise ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body{
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(180deg,#ff9a9e,#fad0c4,#ffd1dc);
+font-family:'Nunito',sans-serif;
+min-height:100vh;
+overflow-x:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
-background:linear-gradient(to bottom,#ff9a9e,#fad0c4);
-font-family:cursive;
+padding:30px;
+}
+
+.card{
+max-width:750px;
+width:100%;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(12px);
+border-radius:25px;
+padding:35px;
+box-shadow:0 0 30px rgba(255,105,180,.4);
 text-align:center;
 }
+
 h1{
-font-size:65px;
-font-family:'Nunito',sans-serif;
+font-family:'Great Vibes',cursive;
+font-size:68px;
 color:white;
-text-shadow:0 0 20px deeppink,0 0 40px hotpink;
+text-shadow:0 0 18px deeppink;
+margin-bottom:20px;
 }
+
 p{
 font-size:27px;
-font-family:'Poppins',sans-serif;
-color:#ffffff;
 line-height:1.9;
-padding:0 25px;
-font-weight:500;
-text-shadow:0 1px 3px rgba(0,0,0,0.25);
+color:white;
+font-weight:600;
+text-shadow:0 1px 3px rgba(0,0,0,.3);
 }
 
 h2{
-font-size:42px;
+margin-top:25px;
 font-family:'Great Vibes',cursive;
-color:#ffffff;
-text-shadow:0 0 10px hotpink;
+font-size:46px;
+color:white;
+text-shadow:0 0 12px hotpink;
 }
 .sparkle{
 position:fixed;
@@ -43,20 +66,45 @@ height:8px;
 background:white;
 border-radius:50%;
 animation:twinkle 2s infinite;
-opacity:0.8;
 }
 
 @keyframes twinkle{
-0%{transform:scale(0);opacity:0;}
-50%{transform:scale(1);opacity:1;}
-100%{transform:scale(0);opacity:0;}
+0%{opacity:0;transform:scale(0);}
+50%{opacity:1;transform:scale(1);}
+100%{opacity:0;transform:scale(0);}
 }
+
+.heart{
+position:fixed;
+bottom:-40px;
+font-size:24px;
+color:#ff4d88;
+animation:floatUp 8s linear infinite;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
 </style>
 </head>
+
 <body>
 
-<div>
+<div class="card">
+
 <h1>Happy Birthday Chandru ❤️</h1>
+
 <p>
 On this special day,<br><br>
 
@@ -67,22 +115,23 @@ and your heart is my favorite place. 💖<br><br>
 
 No matter what happens,<br>
 I will always stand by your side.<br>
-You are not just my love,<br>
-you are my forever. ♾️❤️<br><br>
-
-May God bless you with<br>
-good health, happiness,<br>
-peace, and success always. 🙏✨<br><br>
-
-Happy Birthday, My Love! 🎂❤️
+You are my forever. ♾️❤️
 </p>
-<h2 style="color:white;">With Love,<br>Jeya 💕</h2>
+
+<h2>With Love,<br>Jeya 💕</h2>
+
 </div>
-<div class="sparkle" style="top:15%;left:20%;"></div>
-<div class="sparkle" style="top:30%;left:80%;animation-delay:1s;"></div>
-<div class="sparkle" style="top:70%;left:25%;animation-delay:0.5s;"></div>
-<div class="sparkle" style="top:50%;left:60%;animation-delay:1.5s;"></div>
-<div class="sparkle" style="top:85%;left:75%;animation-delay:2s;"></div>
+<div class="sparkle" style="top:15%;left:20%;animation-delay:0s;"></div>
+<div class="sparkle" style="top:35%;left:80%;animation-delay:1s;"></div>
+<div class="sparkle" style="top:70%;left:25%;animation-delay:2s;"></div>
+<div class="sparkle" style="top:55%;left:60%;animation-delay:1.5s;"></div>
+<div class="sparkle" style="top:85%;left:75%;animation-delay:0.5s;"></div>
+
+<div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
+<div class="heart" style="left:30%;animation-delay:2s;">💖</div>
+<div class="heart" style="left:50%;animation-delay:4s;">💕</div>
+<div class="heart" style="left:70%;animation-delay:1s;">❤️</div>
+<div class="heart" style="left:90%;animation-delay:3s;">💗</div>
 
 </body>
 </html>
