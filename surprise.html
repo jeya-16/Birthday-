@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Birthday Surprise ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,46 +18,41 @@ box-sizing:border-box;
 
 body{
 background:linear-gradient(180deg,#ff9a9e,#fad0c4,#ffd1dc);
-font-family:'Nunito',sans-serif;
-min-height:100vh;
-overflow-x:hidden;
-body{
-margin:0;
-background:linear-gradient(180deg,#ff9a9e,#fad0c4,#ffd1dc);
-font-family:'Nunito',sans-serif;
-min-height:100vh;
-overflow-x:hidden;
+font-family:'Poppins',sans-serif;
 text-align:center;
+overflow-x:hidden;
+min-height:100vh;
 padding:40px 20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
 }
 
 h1{
 font-family:'Great Vibes',cursive;
 font-size:68px;
 color:white;
-text-shadow:0 0 18px deeppink;
-margin-bottom:20px;
+text-shadow:0 0 20px deeppink;
+margin-bottom:35px;
 }
 
-p{
-font-size:29px;
-font-family:'Poppins',sans-serif;
-font-style:italic;
-line-height:2;
-color:#fffafc;
-font-weight:500;
-text-shadow:0 2px 6px rgba(0,0,0,.35);
-padding:0 20px;
-}
-
-h2{
-margin-top:25px;
-font-family:'Great Vibes',cursive;
-font-size:46px;
+.message{
+font-size:28px;
+line-height:1.9;
 color:white;
-text-shadow:0 0 12px hotpink;
+font-style:italic;
+text-shadow:0 2px 6px rgba(0,0,0,.3);
 }
-.sparkle{
+
+.signature{
+margin-top:40px;
+font-family:'Great Vibes',cursive;
+font-size:48px;
+color:white;
+text-shadow:0 0 15px hotpink;
+}.sparkle{
 position:fixed;
 width:8px;
 height:8px;
@@ -72,24 +69,15 @@ animation:twinkle 2s infinite;
 
 .heart{
 position:fixed;
-bottom:-40px;
+bottom:-50px;
 font-size:24px;
-color:#ff4d88;
 animation:floatUp 8s linear infinite;
 }
 
 @keyframes floatUp{
-0%{
-transform:translateY(0);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
+0%{transform:translateY(0);opacity:0;}
+20%{opacity:1;}
+100%{transform:translateY(-120vh);opacity:0;}
 }
 
 </style>
@@ -97,38 +85,40 @@ opacity:0;
 
 <body>
 
-<div>
+<div class="container">
+
 <h1>Happy Birthday Chandru ❤️</h1>
 
-<p>
-On this special day,<br><br>
+<p class="message">
+On this beautiful day,<br><br>
 
-I thank God for bringing you into my life. ❤️<br>
+I thank God for bringing you into my life. ❤️<br><br>
+
 Your smile is my happiness,<br>
-your love is my strength,<br>
-and your heart is my favorite place. 💖<br><br>
+Your love is my strength,<br>
+And your heart is my favorite place. 💖<br><br>
 
 No matter what happens,<br>
 I will always stand by your side.<br>
 You are my forever. ♾️❤️
 </p>
 
-<div style="text-align:center;">
-<h2>With Love,<br>Jeya 💕</h2>
+<div class="signature">
+With Love,<br>
+Jeya 💕
 </div>
 
-</div>
-<div class="sparkle" style="top:15%;left:20%;animation-delay:0s;"></div>
-<div class="sparkle" style="top:35%;left:80%;animation-delay:1s;"></div>
-<div class="sparkle" style="top:70%;left:25%;animation-delay:2s;"></div>
-<div class="sparkle" style="top:55%;left:60%;animation-delay:1.5s;"></div>
-<div class="sparkle" style="top:85%;left:75%;animation-delay:0.5s;"></div>
+</div><div class="sparkle" style="top:15%;left:20%;animation-delay:0s;"></div>
+<div class="sparkle" style="top:30%;left:80%;animation-delay:1s;"></div>
+<div class="sparkle" style="top:50%;left:15%;animation-delay:2s;"></div>
+<div class="sparkle" style="top:70%;left:70%;animation-delay:1.5s;"></div>
+<div class="sparkle" style="top:85%;left:40%;animation-delay:0.5s;"></div>
 
 <div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
 <div class="heart" style="left:30%;animation-delay:2s;">💖</div>
 <div class="heart" style="left:50%;animation-delay:4s;">💕</div>
-<div class="heart" style="left:70%;animation-delay:1s;">❤️</div>
-<div class="heart" style="left:90%;animation-delay:3s;">💗</div>
+<div class="heart" style="left:70%;animation-delay:1s;">💗</div>
+<div class="heart" style="left:90%;animation-delay:3s;">❤️</div>
 
 </body>
 </html>
