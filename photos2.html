@@ -14,55 +14,38 @@
 <style>
 
 body{
-background:linear-gradient(180deg,#ff9a9e,#fad0c4,#ffd1dc);
+background: linear-gradient(
+180deg,
+#0f0f0f,
+#3d1028,
+#8b2e5d,
+#f7a8c9
+);
 font-family:'Poppins',sans-serif;
 text-align:center;
 padding:40px 20px;
 color:white;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-}
-
-.photo{
-width:300px;
-border-radius:20px;
-box-shadow:0 0 20px hotpink;
-}
-
-.quote{
-font-family:'Playfair Display',serif;
-font-size:28px;
-line-height:1.8;
-font-style:italic;
-margin-top:30px;
-}
-
-.birthday{
-font-family:'Playfair Display',serif;
-font-size:38px;
-margin-top:25px;
+min-height:100vh;
 }
 
 button{
 margin-top:35px;
 padding:15px 35px;
 font-size:20px;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ff4f9a,#b5175d);
+color:white;
 border:none;
 border-radius:30px;
-background:hotpink;
-color:white;
-box-shadow:0 0 15px deeppink;
+box-shadow:0 0 18px rgba(255,79,154,0.6);
+cursor:pointer;
+transition:0.3s;
 }
-.floating{
-    position: fixed;
-    bottom: -100px;
-    font-size: 28px;
-    pointer-events: none;
-    animation: floatUp 8s linear infinite;
-    z-index: 1;
+
+button:hover{
+transform:scale(1.08);
+background:linear-gradient(135deg,#ff6fb2,#d63384);
+box-shadow:0 0 25px rgba(255,111,178,0.8);
 }
 
 @keyframes floatUp{
