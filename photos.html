@@ -122,7 +122,27 @@ border-radius:30px;
 box-shadow:0 0 15px deeppink;
 
 }
+.heart,.balloon{
+position:fixed;
+bottom:-60px;
+font-size:28px;
+animation:floatUp 8s linear infinite;
+pointer-events:none;
+}
 
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
 </style>
 
 </head>
@@ -166,6 +186,18 @@ Jeya ❤️
 One More Memory ❤️
 </button>
 
+</div>
+
+<div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
+<div class="heart" style="left:30%;animation-delay:2s;">💖</div>
+<div class="heart" style="left:50%;animation-delay:4s;">💕</div>
+<div class="heart" style="left:70%;animation-delay:1s;">💗</div>
+<div class="heart" style="left:90%;animation-delay:3s;">❤️</div>
+
+<div class="balloon" style="left:20%;animation-delay:0s;">🎈</div>
+<div class="balloon" style="left:40%;animation-delay:2s;">🎈</div>
+<div class="balloon" style="left:60%;animation-delay:1s;">🎈</div>
+<div class="balloon" style="left:80%;animation-delay:3s;">🎈</div>
 
 </div>
 
