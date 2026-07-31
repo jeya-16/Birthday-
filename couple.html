@@ -1,13 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Memories ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(180deg,#ffd6e8,#ffeaf3,#fff5f8);
+font-family:'Poppins',sans-serif;
+overflow:hidden;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+h1{
+position:absolute;
+top:35px;
+font-family:'Great Vibes',cursive;
+font-size:42px;
+color:#ff2d75;
+text-shadow:2px 2px 10px white;
+}
+
+.frame{
+width:330px;
+height:430px;
+background:white;
+padding:15px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+transform:rotate(-2deg);
+transition:.5s;
+}
+
+.frame:hover{
+transform:rotate(0deg) scale(1.03);
+}
+
+.frame img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:12px;
+}
+
+.heart{
+position:absolute;
+bottom:-40px;
+color:#ff4d88;
+font-size:20px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+</style>
 </head>
+
 <body>
 
 <h1>Our Memories ❤️</h1>
+
+<div class="frame">
+<img id="slide" src="photos/photo1.jpg">
+</div>
+
+<script>
+
+const photos=[
+"photos/photo1.jpg",
+"photos/photo2.jpg",
+"photos/photo3.jpg",
+"photos/photo4.jpg",
+"photos/photo5.jpg",
+"photos/photo6.jpg",
+"photos/photo7.jpg",
+"photos/photo8.jpg",
+"photos/photo9.jpg",
+"photos/photo10.jpg",
+"photos/photo11.jpg",
+"photos/photo12.jpg",
+"photos/photo13.jpg",
+"photos/photo14.jpg",
+"photos/photo15.jpg"
+];
+
+let i=0;
+
+setInterval(()=>{
+i=(i+1)%photos.length;
+document.getElementById("slide").src=photos[i];
+},3000);
+
+function createHeart(){
+
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*20)+"px";
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},9000);
+
+}
+
+setInterval(createHeart,400);
+
+</script>
 
 </body>
 </html>
