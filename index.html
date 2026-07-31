@@ -1,18 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Chandru ❤️</title>
-<script>
-if(!sessionStorage.getItem("visited")){
-    sessionStorage.setItem("visited","yes");
-    window.location.href="intro.html";
-}
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<title>Birthday Surprise ❤️</title>
 
 <style>
 
@@ -23,146 +14,246 @@ box-sizing:border-box;
 }
 
 body{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:center;
-    text-align:center;
-    overflow-x:hidden;
-    overflow-y:auto;
-    padding:50px 20px;
-    background:linear-gradient(180deg,#ffd6e8,#ffc2d6,#ffb3d9);
-    font-family:'Poppins',sans-serif;
-    position:relative;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle,#8b0000,#000000);
+font-family:Arial, sans-serif;
 }
 
-h1{
-    font-family:'Great Vibes', cursive;
-    font-size:50px;
-    font-weight:400;
-    color:#fffafc;
-    line-height:1.1;
-    text-shadow:
-        0 0 4px #fff,
-        0 0 10px #ff8fc4,
-        0 0 18px #ff5fa2;
-    margin-bottom:10px;
-}
 
-h1 span{
-    display:block;
-    font-size:68px;
-    font-weight:400;
-    color:#ff3f8e;
-    -webkit-text-stroke:1px white;
-    text-shadow:
-        0 0 5px #fff,
-        0 0 12px #ff69b4,
-        0 0 20px #ff69b4;
-}
+#count{
 
-.from{
-margin-top:20px;
-font-family:'Great Vibes',cursive;
-font-size:34px;
-color:#d81b60;
-text-shadow:0 0 8px pink;
-}
-
-button{
-margin-top:30px;
-padding:16px 36px;
-font-size:24px;
-font-family:'Playfair Display',serif;
-background:#ff4d88;
+font-size:180px;
+font-weight:bold;
 color:white;
-border:none;
-border-radius:50px;
-cursor:pointer;
-box-shadow:
-0 0 15px #ff4d88,
-0 0 30px hotpink;
-transition:.3s;
+
+text-shadow:
+0 0 20px red,
+0 0 40px crimson,
+0 0 80px red;
+
+position:relative;
+z-index:5;
+
+animation:zoom 1s ease;
+
 }
 
-button:hover{
-transform:scale(1.08);
-}
 
-.hearts{
-position:absolute;
-bottom:-60px;
-font-size:45px;
-animation:float 6s linear infinite;
-opacity:.9;
-}
+@keyframes zoom{
 
-@keyframes float{
 0%{
-transform:translateY(0);
-opacity:1;
-}
-100%{
-transform:translateY(-110vh);
+transform:scale(0);
 opacity:0;
 }
-}.made{
-  margin-top:25px;
-  font-family:'Poppins', sans-serif;
-  font-size:18px;
-  color:#b03a5b;
-  letter-spacing:1px;
+
+100%{
+transform:scale(1);
+opacity:1;
 }
 
-.bottom{
-  margin-top:15px;
-  font-family:'Poppins', sans-serif;
-  font-size:16px;
-  color:#b03a5b;
-  letter-spacing:1px;
 }
-.forever{
-  margin-top:20px;
-  font-family:'Poppins', sans-serif;
-  font-size:22px;
-  font-weight:bold;
-  color:#b03a5b;
-  letter-spacing:1px;
+
+
+
+/* Firework */
+
+.firework{
+
+position:absolute;
+width:6px;
+height:6px;
+
+background:white;
+border-radius:50%;
+
+box-shadow:
+0 0 10px white,
+0 0 20px red;
+
+animation:explode 1s ease-out forwards;
+
 }
+
+
+@keyframes explode{
+
+0%{
+
+transform:translate(0,0) scale(1);
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+translate(var(--x),var(--y))
+scale(0);
+
+opacity:0;
+
+}
+
+}
+
+
 </style>
+
 </head>
+
 
 <body>
 
-<h1>
-Happy Birthday
-<span>Chandru ❤️</span>
-</h1>
 
-<p class="from">
-With Love,<br>
-Jeya 💖
-</p>
+<div id="count">3</div>
 
-<button onclick="window.location.href='surprise.html'">
-💖 Just For You 💖
-</button>
-<p class="made">
-  Made with love, just for you ❤️
-</p>
-<p class="bottom">
-  May your day be filled with happiness and smiles ✨
-</p>
-<p class="forever">
-  Forever Loving You ❤️
-</p>
-<div class="hearts" style="left:10%;animation-delay:0s;">❤️</div>
-<div class="hearts" style="left:25%;animation-delay:1s;">💕</div>
-<div class="hearts" style="left:40%;animation-delay:2s;">💖</div>
-<div class="hearts" style="left:60%;animation-delay:3s;">💗</div>
-<div class="hearts" style="left:75%;animation-delay:1.5s;">💝</div>
-<div class="hearts" style="left:90%;animation-delay:2.5s;">❤️</div>
+
+
+<script>
+
+
+let count = 3;
+
+let text = document.getElementById("count");
+
+
+
+function speak(word){
+
+let voice = new SpeechSynthesisUtterance(word);
+
+voice.lang="en-US";
+
+voice.pitch=1.2;
+
+voice.rate=0.8;
+
+speechSynthesis.speak(voice);
+
+}
+
+
+
+speak("Three");
+
+
+
+let timer=setInterval(()=>{
+
+
+count--;
+
+
+if(count>0){
+
+
+text.innerHTML=count;
+
+
+speak(count==2 ? "Two" : "One");
+
+
+}
+
+
+else{
+
+
+clearInterval(timer);
+
+
+text.innerHTML="❤️";
+
+
+speak("Happy Birthday Chandru");
+
+
+
+setTimeout(()=>{
+
+
+window.location.href="home.html";
+
+
+},2500);
+
+
+}
+
+
+
+},1000);
+
+
+
+
+
+function firework(){
+
+
+let x=Math.random()*window.innerWidth;
+
+let y=Math.random()*window.innerHeight;
+
+
+
+for(let i=0;i<35;i++){
+
+
+let spark=document.createElement("div");
+
+
+spark.className="firework";
+
+
+spark.style.left=x+"px";
+
+spark.style.top=y+"px";
+
+
+
+spark.style.setProperty("--x",
+(Math.random()*300-150)+"px");
+
+
+
+spark.style.setProperty("--y",
+(Math.random()*300-150)+"px");
+
+
+
+document.body.appendChild(spark);
+
+
+
+setTimeout(()=>{
+
+spark.remove();
+
+},1000);
+
+
+
+}
+
+
+
+}
+
+
+
+setInterval(firework,600);
+
+
+
+</script>
+
 
 </body>
+
 </html>
