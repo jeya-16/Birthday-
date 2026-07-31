@@ -1,118 +1,259 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Surprise ❤️</title>
+
+<title>Birthday Surprise ❤️</title>
 
 <style>
-.firework{
-position:absolute;
-width:5px;
-height:5px;
-background:white;
-border-radius:50%;
-box-shadow:0 0 10px white;
-animation:explode 1s ease-out forwards;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-@keyframes explode{
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle,#8b0000,#000000);
+font-family:Arial, sans-serif;
+}
+
+
+#count{
+
+font-size:180px;
+font-weight:bold;
+color:white;
+
+text-shadow:
+0 0 20px red,
+0 0 40px crimson,
+0 0 80px red;
+
+position:relative;
+z-index:5;
+
+animation:zoom 1s ease;
+
+}
+
+
+@keyframes zoom{
 
 0%{
+transform:scale(0);
+opacity:0;
+}
+
+100%{
 transform:scale(1);
 opacity:1;
 }
 
+}
+
+
+
+/* Firework */
+
+.firework{
+
+position:absolute;
+width:6px;
+height:6px;
+
+background:white;
+border-radius:50%;
+
+box-shadow:
+0 0 10px white,
+0 0 20px red;
+
+animation:explode 1s ease-out forwards;
+
+}
+
+
+@keyframes explode{
+
+0%{
+
+transform:translate(0,0) scale(1);
+opacity:1;
+
+}
+
+
 100%{
+
 transform:
 translate(var(--x),var(--y))
 scale(0);
+
 opacity:0;
+
 }
 
 }
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(#ffd6e8,#ffc2d6);
-font-size:80px;
-font-family:Poppins;
-color:#ff3366;
-}
+
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <div id="count">3</div>
 
+
+
 <script>
 
+
 let count = 3;
+
 let text = document.getElementById("count");
 
+
+
 function speak(word){
- let voice = new SpeechSynthesisUtterance(word);
- voice.lang = "en-US";
- voice.pitch = 1.2;
- voice.rate = 0.8;
- speechSynthesis.speak(voice);
+
+let voice = new SpeechSynthesisUtterance(word);
+
+voice.lang="en-US";
+
+voice.pitch=1.2;
+
+voice.rate=0.8;
+
+speechSynthesis.speak(voice);
+
 }
+
+
 
 speak("Three");
 
-let timer = setInterval(()=>{
 
- count--;
 
- if(count > 0){
-   text.innerHTML = count;
-   speak(count == 2 ? "Two" : "One");
- }
+let timer=setInterval(()=>{
 
- else{
-   clearInterval(timer);
-   text.innerHTML="❤️";
-   speak("Happy Birthday Chandru");
-   
-   setTimeout(()=>{
-     window.location.href="index.html";
-   },2000);
- }
+
+count--;
+
+
+if(count>0){
+
+
+text.innerHTML=count;
+
+
+speak(count==2 ? "Two" : "One");
+
+
+}
+
+
+else{
+
+
+clearInterval(timer);
+
+
+text.innerHTML="❤️";
+
+
+speak("Happy Birthday Chandru");
+
+
+
+setTimeout(()=>{
+
+
+window.location.href="index.html";
+
+
+},2500);
+
+
+}
+
+
 
 },1000);
+
+
+
+
+
 function firework(){
 
+
 let x=Math.random()*window.innerWidth;
+
 let y=Math.random()*window.innerHeight;
 
-for(let i=0;i<25;i++){
+
+
+for(let i=0;i<35;i++){
+
 
 let spark=document.createElement("div");
+
+
 spark.className="firework";
 
+
 spark.style.left=x+"px";
+
 spark.style.top=y+"px";
 
+
+
 spark.style.setProperty("--x",
-(Math.random()*200-100)+"px");
+(Math.random()*300-150)+"px");
+
+
 
 spark.style.setProperty("--y",
-(Math.random()*200-100)+"px");
+(Math.random()*300-150)+"px");
+
+
 
 document.body.appendChild(spark);
 
+
+
 setTimeout(()=>{
+
 spark.remove();
+
 },1000);
 
-}
+
 
 }
 
-setInterval(firework,700);
+
+
+}
+
+
+
+setInterval(firework,600);
+
+
+
 </script>
 
+
 </body>
+
 </html>
