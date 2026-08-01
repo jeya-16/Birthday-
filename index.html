@@ -118,113 +118,67 @@ opacity:0;
 
 <script>
 
-
 let count = 3;
-
 let text = document.getElementById("count");
 
+text.innerHTML = count; // முதலில் 3-ஐ காட்டு
 
+setTimeout(() => {
 
-
-
-let timer=setInterval(()=>{
-
+let timer = setInterval(() => {
 
 count--;
 
+if(count > 0){
 
-if(count>0){
+text.innerHTML = count;
 
-
-text.innerHTML=count;
-
-
-
-
-
-}
-
-
-else{
-
+}else{
 
 clearInterval(timer);
 
+text.innerHTML = "❤️";
 
-text.innerHTML="❤️";
+setTimeout(() => {
 
-
-setTimeout(()=>{
-
-
-window.location.href="home.html";
-
+window.location.href = "home.html";
 
 },2000);
 
-
 }
-
-
 
 },1500);
 
-
-
-
+},1500);
 
 function firework(){
 
-
 let x=Math.random()*window.innerWidth;
-
 let y=Math.random()*window.innerHeight;
-
-
 
 for(let i=0;i<80;i++){
 
-
 let spark=document.createElement("div");
-
 
 spark.className="firework";
 
-
 spark.style.left=x+"px";
-
 spark.style.top=y+"px";
-
-
 
 spark.style.setProperty("--x",(Math.random()*600-300)+"px");
 spark.style.setProperty("--y",(Math.random()*600-300)+"px");
 
-
-
 document.body.appendChild(spark);
 
-
-
 setTimeout(()=>{
-
 spark.remove();
-
 },1000);
 
-
-
 }
 
-
-
 }
-
-
 
 setInterval(firework,900);
-
-
 
 </script>
 
