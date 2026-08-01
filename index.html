@@ -125,24 +125,6 @@ let text = document.getElementById("count");
 
 
 
-function speak(word){
-
-let voice = new SpeechSynthesisUtterance(word);
-
-voice.lang="en-US";
-
-voice.pitch=1.2;
-
-voice.rate=0.8;
-
-speechSynthesis.speak(voice);
-
-}
-
-
-
-speak("Three");
-
 
 
 let timer=setInterval(()=>{
@@ -157,7 +139,7 @@ if(count>0){
 text.innerHTML=count;
 
 
-speak(count==2 ? "Two" : "One");
+
 
 
 }
@@ -170,10 +152,6 @@ clearInterval(timer);
 
 
 text.innerHTML="❤️";
-
-
-speak("Happy Birthday Chandru");
-
 
 
 setTimeout(()=>{
