@@ -204,7 +204,7 @@ let y=Math.random()*window.innerHeight;
 
 
 
-for(let i=0;i<35;i++){
+for(let i=0;i<80;i++){
 
 
 let spark=document.createElement("div");
@@ -220,12 +220,12 @@ spark.style.top=y+"px";
 
 
 spark.style.setProperty("--x",
-(Math.random()*300-150)+"px");
+(Math.random()*600-300)+"px"
 
 
 
 spark.style.setProperty("--y",
-(Math.random()*300-150)+"px");
+(Math.random()*600-300)+"px"
 
 
 
@@ -249,7 +249,7 @@ spark.remove();
 
 
 
-setInterval(firework,600);
+setInterval(firework,900);
 
 
 
