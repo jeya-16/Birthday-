@@ -28,6 +28,7 @@ font-family:'Bebas Neue', sans-serif;
 font-size:350px;
 font-weight:bold;
 color:white;
+
 transform:scale(1.4);
 
 text-shadow:
@@ -60,32 +61,37 @@ opacity:1;
 .firework{
 
 position:absolute;
-width:10px;
-height:10px;
+width:6px;
+height:6px;
 
 background:white;
 border-radius:50%;
 
 box-shadow:
-0 0 20px white,
-0 0 40px red,
-0 0 60px orange,
-0 0 80px yellow;
+0 0 10px white,
+0 0 20px red;
 
-animation:explode 1.5s ease-out forwards;
+animation:explode 1s ease-out forwards;
 
 }
 
 @keyframes explode{
 
 0%{
+
 transform:translate(0,0) scale(1);
 opacity:1;
+
 }
 
 100%{
-transform:translate(var(--x),var(--y)) scale(0);
+
+transform:
+translate(var(--x),var(--y))
+scale(0);
+
 opacity:0;
+
 }
 
 }
