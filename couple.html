@@ -98,7 +98,38 @@ transform:translateY(-120vh);
 opacity:0;
 }
 }
+.letter-btn{
 
+position:absolute;
+bottom:40px;
+
+padding:14px 30px;
+
+background:linear-gradient(45deg,#ff4d88,#ff80ab);
+
+color:white;
+
+border:none;
+border-radius:50px;
+
+font-size:20px;
+font-family:'Poppins',sans-serif;
+
+cursor:pointer;
+
+box-shadow:0 0 15px #ff4d88;
+
+transition:.3s;
+
+}
+
+.letter-btn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 25px #ff80ab;
+
+}
 </style>
 </head>
 
@@ -109,6 +140,9 @@ opacity:0;
 <div class="frame">
 <img id="slide" src="couple photo 1.jpg.jpg">
 </div>
+<button onclick="location.href='letter.html'" class="letter-btn">
+💌 My Words
+</button>
 
 <script>
 
