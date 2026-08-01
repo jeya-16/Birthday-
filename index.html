@@ -98,9 +98,7 @@ opacity:0;
 let count = 3;
 let text = document.getElementById("count");
 
-text.innerHTML = count; // முதலில் 3-ஐ காட்டு
-
-setTimeout(() => {
+text.innerHTML = count;
 
 let timer = setInterval(() => {
 
@@ -113,42 +111,12 @@ text.innerHTML = count;
 }else{
 
 clearInterval(timer);
+
 window.location.href = "home.html";
 
 }
 
 },1500);
-
-},1500);
-
-function firework(){
-
-let x=Math.random()*window.innerWidth;
-let y=Math.random()*window.innerHeight;
-
-for(let i=0;i<180;i++){
-
-let spark=document.createElement("div");
-
-spark.className="firework";
-
-spark.style.left=x+"px";
-spark.style.top=y+"px";
-
-spark.style.setProperty("--x",(Math.random()*1400-700)+"px");
-spark.style.setProperty("--y",(Math.random()*1400-700)+"px");
-
-document.body.appendChild(spark);
-
-setTimeout(()=>{
-spark.remove();
-},1000);
-
-}
-
-}
-
-setInterval(firework,900);
 
 </script>
 
