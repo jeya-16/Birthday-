@@ -117,7 +117,34 @@ window.location.href = "home.html";
 }
 
 },1500);
+function firework(){
 
+let x = Math.random() * window.innerWidth;
+let y = Math.random() * window.innerHeight;
+
+for(let i = 0; i < 120; i++){
+
+let spark = document.createElement("div");
+
+spark.className = "firework";
+
+spark.style.left = x + "px";
+spark.style.top = y + "px";
+
+spark.style.setProperty("--x",(Math.random()*1000-500)+"px");
+spark.style.setProperty("--y",(Math.random()*1000-500)+"px");
+
+document.body.appendChild(spark);
+
+setTimeout(()=>{
+spark.remove();
+},1000);
+
+}
+
+}
+
+setInterval(firework,900);
 </script>
 
 
