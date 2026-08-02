@@ -36,7 +36,7 @@ function toggleMusic(){
 
 
         if(btn){
-            btn.innerHTML="🔇 OFF";
+            btn.innerHTML="⏸️";
         }
 
 
@@ -49,7 +49,7 @@ function toggleMusic(){
 
 
         if(btn){
-            btn.innerHTML="🎵 ON";
+            btn.innerHTML="▶️";
         }
 
     }
