@@ -176,37 +176,6 @@ Jeya 💖
 <button id="musicBtn" onclick="toggleMusic()">
 🎵 Music ON
 </button>
-<audio id="bgm" loop>
-  <source src="Vaseegara.mp3" type="audio/mpeg">
-</audio>
-<script>
-function toggleMusic(){
-
-const bgm = document.getElementById("bgm");
-const musicBtn = document.getElementById("musicBtn");
-
-if(bgm.paused){
-    bgm.play();
-    localStorage.setItem("music","on");
-    musicBtn.innerHTML="🔇 OFF";
-}else{
-    bgm.pause();
-    localStorage.setItem("music","off");
-    musicBtn.innerHTML="🎵 ON";
-}
-}
-
-window.onload = function(){
-
-const bgm = document.getElementById("bgm");
-const musicBtn = document.getElementById("musicBtn");
-
-if(localStorage.getItem("music") === "on"){
-    bgm.play().catch(()=>{});
-    musicBtn.innerHTML="🔇 OFF";
-}
-}
-</script>
 <script src="music.js"></script>
 </body>
 </html>
