@@ -124,6 +124,22 @@ opacity:0;
   color:#b03a5b;
   letter-spacing:1px;
 }
+#musicBtn{
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+padding:15px 35px;
+font-size:20px;
+font-weight:bold;
+border:none;
+border-radius:40px;
+background:linear-gradient(45deg,#ff4d6d,#ff1493);
+color:white;
+cursor:pointer;
+z-index:9999;
+box-shadow:0 6px 18px rgba(255,20,147,0.5);
+}
 </style>
 </head>
 
@@ -157,6 +173,9 @@ Jeya 💖
 <div class="hearts" style="left:60%;animation-delay:3s;">💗</div>
 <div class="hearts" style="left:75%;animation-delay:1.5s;">💝</div>
 <div class="hearts" style="left:90%;animation-delay:2.5s;">❤️</div>
+<button id="musicBtn" onclick="toggleMusic()">
+🎵 Music ON
+</button>
 
 </body>
 </html>
