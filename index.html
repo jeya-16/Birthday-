@@ -4,7 +4,9 @@
 <head>
 
 <title>Birthday Surprise ❤️</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
 <style>
 
 *{
@@ -20,15 +22,14 @@ display:flex;
 justify-content:center;
 align-items:center;
 background:radial-gradient(circle,#8b0000,#000000);
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 }
 
 #count{
-font-family:'Bebas Neue', sans-serif;
+font-family:'Bebas Neue',sans-serif;
 font-size:350px;
 font-weight:bold;
 color:white;
-
 
 text-shadow:
 0 0 20px red,
@@ -37,11 +38,8 @@ text-shadow:
 
 position:relative;
 z-index:5;
-
 }
 
-
-/* Firework */
 
 .firework{
 
@@ -60,13 +58,12 @@ animation:explode 1s ease-out forwards;
 
 }
 
+
 @keyframes explode{
 
 0%{
-
 transform:translate(0,0) scale(1);
 opacity:1;
-
 }
 
 100%{
@@ -80,21 +77,27 @@ opacity:0;
 }
 
 }
+
+
 #musicBtn{
-position:fixed;
-top:20px;
-right:20px;
-padding:15px 25px;
-font-size:22px;
+
+padding:18px 35px;
+font-size:24px;
 font-weight:bold;
+
 border:none;
 border-radius:50px;
+
 background:#ff4d6d;
 color:white;
+
 cursor:pointer;
+
 z-index:99999;
-min-width:120px;
+
 }
+
+
 </style>
 
 </head>
@@ -103,89 +106,132 @@ min-width:120px;
 <body>
 
 
-<div id="count">3</div>
+<div id="count"></div>
+
+
+<audio id="bgm" loop>
+<source src="Vaseegara.mp3" type="audio/mpeg">
+</audio>
+
+
+<button id="musicBtn" onclick="startMusic()">
+🎶 Play Music
+</button>
 
 
 
 <script>
 
-let count = 3;
-let text = document.getElementById("count");
 
-text.innerHTML = count;
+let text=document.getElementById("count");
+let musicBtn=document.getElementById("musicBtn");
+let bgm=document.getElementById("bgm");
 
-let timer = setInterval(() => {
+
+function startMusic(){
+
+bgm.play();
+
+musicBtn.style.display="none";
+
+startCountdown();
+
+}
+
+
+
+function startCountdown(){
+
+let count=3;
+
+text.innerHTML=count;
+
+
+let timer=setInterval(()=>{
+
 
 count--;
 
-if(count > 0){
 
-text.innerHTML = count;
+if(count>0){
 
-}else{
-
-    clearInterval(timer);
-
-    firework();
-
-    setTimeout(() => {
-        window.location.href = "home.html";
-    },2000);
+text.innerHTML=count;
 
 }
 
+else{
+
+
+clearInterval(timer);
+
+
+firework();
+
+
+setTimeout(()=>{
+
+window.location.href="home.html";
+
+},2000);
+
+
+}
+
+
 },1500);
+
+
+}
+
+
+
+
 function firework(){
 
-let x = Math.random() * window.innerWidth;
-let y = Math.random() * window.innerHeight;
 
-for(let i = 0; i < 120; i++){
+let x=Math.random()*window.innerWidth;
+let y=Math.random()*window.innerHeight;
 
-let spark = document.createElement("div");
 
-spark.className = "firework";
+for(let i=0;i<120;i++){
 
-spark.style.left = x + "px";
-spark.style.top = y + "px";
+
+let spark=document.createElement("div");
+
+spark.className="firework";
+
+
+spark.style.left=x+"px";
+spark.style.top=y+"px";
+
 
 spark.style.setProperty("--x",(Math.random()*1000-500)+"px");
+
 spark.style.setProperty("--y",(Math.random()*1000-500)+"px");
+
 
 document.body.appendChild(spark);
 
+
 setTimeout(()=>{
+
 spark.remove();
+
 },1000);
 
-}
 
 }
+
+
+}
+
 
 setInterval(firework,900);
-function toggleMusic(){
 
-const bgm = document.getElementById("bgm");
-const musicBtn = document.getElementById("musicBtn");
 
-if(bgm.paused){
-bgm.play();
-musicBtn.innerHTML="🔇 OFF";
-}else{
-bgm.pause();
-musicBtn.innerHTML="🎵 ON";
-}
-
-}
 </script>
 
-<audio id="bgm" loop>
-    <source src="Vaseegara.mp3" type="audio/mpeg">
-</audio>
 
-<button id="musicBtn" onclick="toggleMusic()">
-🎶 Play Music
-</button>
 </body>
 
 </html>
