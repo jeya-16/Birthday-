@@ -162,17 +162,17 @@ spark.remove();
 }
 
 setInterval(firework,900);
+function toggleMusic(){
+
 const bgm = document.getElementById("bgm");
 const musicBtn = document.getElementById("musicBtn");
 
-function toggleMusic(){
-
 if(bgm.paused){
 bgm.play();
-musicBtn.innerHTML = "🔇 OFF";
+musicBtn.innerHTML="🔇 OFF";
 }else{
 bgm.pause();
-musicBtn.innerHTML = "🎵 ON";
+musicBtn.innerHTML="🎵 ON";
 }
 
 }
