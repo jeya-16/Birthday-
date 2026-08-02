@@ -110,9 +110,13 @@ text.innerHTML = count;
 
 }else{
 
-clearInterval(timer);
+    clearInterval(timer);
 
-window.location.href = "home.html";
+    firework();
+
+    setTimeout(() => {
+        window.location.href = "home.html";
+    },2000);
 
 }
 
