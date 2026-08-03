@@ -49,38 +49,31 @@ letter-spacing:2px;
 }
 
 .frame{
-width:330px;
-height:430px;
-background:rgba(255,255,255,0.12);
-padding:15px;
-border:2px solid rgba(255,255,255,0.4);
-border-radius:20px;
-backdrop-filter:blur(8px);
+width:340px;
+background:white;
+padding:15px 15px 45px 15px;
+border-radius:18px;
 
-box-shadow:0 10px 30px rgba(0,0,0,.35);
+box-shadow:
+0 15px 35px rgba(0,0,0,.35),
+0 0 20px rgba(255,255,255,.25);
 
-transform:none;
-transition:.5s;
+transform:rotate(-2deg);
+transition:.4s;
 
-margin-top:-60px;
-}
-.letter-btn:hover{
-
-transform:scale(1.05);
-
-box-shadow:0 0 25px rgba(217,106,167,.9);
-
+margin-top:-50px;
 }
 
 .frame:hover{
-transform:none;
+transform:rotate(0deg) scale(1.03);
 }
 
 .frame img{
 width:100%;
-height:100%;
+height:420px;
 object-fit:cover;
-border-radius:12px;
+border-radius:10px;
+display:block;
 }
 
 .heart{
