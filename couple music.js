@@ -30,7 +30,7 @@ function toggleMusic(){
         localStorage.setItem("coupleSongPlaying","true");
 
         if(btn){
-            btn.innerHTML="⏸️";
+            btn.innerHTML="💖";
         }
 
     }else{
@@ -40,7 +40,7 @@ function toggleMusic(){
         localStorage.setItem("coupleSongPlaying","false");
 
         if(btn){
-            btn.innerHTML="▶️";
+            btn.innerHTML="❤️";
         }
 
     }
@@ -73,13 +73,13 @@ window.addEventListener("load",()=>{
         bgm.play();
 
         if(btn){
-            btn.innerHTML="⏸️";
+            btn.innerHTML="💖";
         }
 
     }else{
 
         if(btn){
-            btn.innerHTML="▶️";
+            btn.innerHTML="❤️";
         }
 
     }
