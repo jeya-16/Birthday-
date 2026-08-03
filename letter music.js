@@ -26,3 +26,10 @@ function toggleMusic(){
     }
 
 }
+window.addEventListener("load", () => {
+    bgm.play();
+    let btn = document.getElementById("musicBtn");
+    if(btn){
+        btn.innerHTML = "💖";
+    }
+});
