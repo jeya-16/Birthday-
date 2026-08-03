@@ -109,10 +109,10 @@ cursor:pointer;
 padding:0;
 box-shadow:none;
 }
-.music-area{
-    text-align:center;
-    margin-top:30px;
-    margin-bottom:40px;
+#musicBtn{
+cursor:pointer;
+font-size:40px;
+margin-left:8px;
 }
 </style>
 
@@ -122,7 +122,10 @@ box-shadow:none;
 
 <div class="letter">
 
-<h1>💌 For Yuhh ❤️</h1>
+<h1>
+💌 For Yuhh
+<span id="musicBtn" onclick="toggleMusic()">❤️</span>
+</h1>
 
 <p>
 
@@ -166,9 +169,6 @@ May we celebrate many more birthdays together... 🎂❤️
 
 </div>
 
-<div class="music-area">
-<button id="musicBtn" onclick="toggleMusic()">❤️</button>
-</div>
 
 </div>
 
