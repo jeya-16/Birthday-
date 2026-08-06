@@ -107,14 +107,56 @@ box-shadow:0 0 20px #ff4d6d,
 
 }
 
+#passwordScreen{
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#ff9acb,#ff1493);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:999999;
+}
 
+#passwordScreen input{
+padding:12px;
+border-radius:10px;
+border:none;
+font-size:18px;
+text-align:center;
+}
+
+#passwordScreen button{
+padding:12px 30px;
+border:none;
+border-radius:20px;
+font-size:18px;
+background:white;
+color:#ff1493;
+}
 </style>
 
 </head>
 
 
 <body>
+<div id="passwordScreen">
 
+<h2>🔒 Enter Password</h2>
+
+<input type="password" id="password" placeholder="Password">
+
+<br><br>
+
+<button onclick="checkPassword()">Open ❤️</button>
+
+<p id="error"></p>
+
+</div>
+
+
+<div id="mainContent">
 
 <div id="count"></div>
 
@@ -233,7 +275,45 @@ setInterval(firework,900);
 
 
 </script>
+</div>
+<script>
 
+let wrongAttempts = 0;
+
+function checkPassword(){
+
+let pass = document.getElementById("password").value;
+let error = document.getElementById("error");
+
+if(pass === "forever1608SJ"){
+
+document.getElementById("passwordScreen").style.display="none";
+
+}
+
+else{
+
+wrongAttempts++;
+
+if(wrongAttempts >= 3){
+
+error.innerHTML="🔒 Only Chandru ❤️";
+
+document.getElementById("password").disabled=true;
+
+}
+
+else{
+
+error.innerHTML="❌ Wrong Password";
+
+}
+
+}
+
+}
+
+</script>
 <script src="music.js"></script>
 </body>
 
