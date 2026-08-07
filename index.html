@@ -121,20 +121,30 @@ z-index:999999;
 }
 
 #passwordScreen input{
-padding:12px;
-border-radius:10px;
+width:300px;
+padding:16px;
+border-radius:15px;
 border:none;
-font-size:18px;
+font-size:22px;
 text-align:center;
+outline:none;
 }
 
 #passwordScreen button{
-padding:12px 30px;
+padding:16px 45px;
 border:none;
-border-radius:20px;
-font-size:18px;
+border-radius:30px;
+font-size:22px;
+font-weight:bold;
 background:white;
 color:#ff1493;
+cursor:pointer;
+box-shadow:0 0 20px #ff1493;
+transition:0.3s;
+}
+
+#passwordScreen button:hover{
+transform:scale(1.05);
 }
 #passwordScreen h2{
 font-size:42px;
